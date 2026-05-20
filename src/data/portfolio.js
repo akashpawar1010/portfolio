@@ -118,4 +118,11 @@ export const portfolioData = {
     "DevOps & Tools": ["Git", "GitHub", "Bitbucket", "Jira", "Figma", "Xcode", "Android Studio"],
     "Architecture": ["Redux", "Context API", "Clean Architecture", "MVVM", "Modular Design"],
   },
+  education: [
+    {
+      degree: "Bachelor of Technology (BTech), Computer Science",
+      institution: "Maharani Girls Engineering College (M.G.E.C)",
+      period: "2014 - 2018",
+    },
+  ],
 };

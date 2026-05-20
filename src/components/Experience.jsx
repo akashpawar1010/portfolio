@@ -48,6 +48,7 @@ function ExperienceItem({ item, index }) {
       transition={{ duration: 0.4, delay: index * 0.08 }}
     >
       <div className="exp-period">{item.period}</div>
+      <div className="exp-timeline-dot" />
       <div className="exp-right">
         <div className="exp-title">
           {item.title} @{' '}
