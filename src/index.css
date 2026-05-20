@@ -133,8 +133,8 @@ body {
 .sidebar {
   width: 300px;
   min-width: 300px;
-  background: var(--sidebar-bg);
-  border-right: 1px solid var(--border);
+  background: transparent;
+  border-right: none;
   padding: 32px 28px;
   position: sticky;
   top: 0;
@@ -144,7 +144,6 @@ body {
   flex-direction: column;
   gap: 24px;
   transition: background 0.3s ease;
-  z-index: 10;
 }
 
 .sidebar-avatar-wrap {
