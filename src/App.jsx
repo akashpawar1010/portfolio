@@ -35,8 +35,11 @@ export default function App() {
         <Skills />
 
         <footer className="footer">
-          <p>Built with ⚡ React + Vite · Designed with ❤️ by {portfolioData.name}</p>
-          <p style={{ marginTop: '6px' }}>© {new Date().getFullYear()} All rights reserved</p>
+          <h3>"What are the chances of you winning?"</h3>
+
+          <p style={{ marginTop: '6px' }}>
+            "As long as I’m alive, there are infinite chances."
+          </p>
         </footer>
       </main>
     </div>
