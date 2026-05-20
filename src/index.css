@@ -46,13 +46,57 @@
   --tree-opacity: 0.06;
 }
 
-/* Accent color themes */
-[data-accent="red"] { --accent: #e85d4a; --accent-hover: #d44535; }
-[data-accent="orange"] { --accent: #e87c3e; --accent-hover: #d46c2e; }
-[data-accent="blue"] { --accent: #4a90e8; --accent-hover: #357fd4; }
-[data-accent="purple"] { --accent: #9b5fe8; --accent-hover: #8044d4; }
-[data-accent="green"] { --accent: #4ae87e; --accent-hover: #35d46a; }
-[data-accent="pink"] { --accent: #e84a9b; --accent-hover: #d43587; }
+/* Accent color themes — each tints the full page background */
+[data-accent="red"] {
+  --accent: #e85d4a;
+  --accent-hover: #d44535;
+  --bg: #f7f5f3;
+  --bg-secondary: #eeebe7;
+  --sidebar-bg: #f0ece8;
+}
+[data-accent="orange"] {
+  --accent: #e87c3e;
+  --accent-hover: #d46c2e;
+  --bg: #fdf5ee;
+  --bg-secondary: #f7ecdf;
+  --sidebar-bg: #f5e8d8;
+}
+[data-accent="blue"] {
+  --accent: #4a90e8;
+  --accent-hover: #357fd4;
+  --bg: #eef4fb;
+  --bg-secondary: #e2ecf7;
+  --sidebar-bg: #dce7f4;
+}
+[data-accent="green"] {
+  --accent: #5aad2f;
+  --accent-hover: #4a9526;
+  --bg: #f0f7e6;
+  --bg-secondary: #e3efd3;
+  --sidebar-bg: #ddebc8;
+}
+
+/* Dark mode overrides for each accent (subtle tint) */
+[data-theme="dark"][data-accent="red"] {
+  --bg: #111111;
+  --bg-secondary: #1a1a1a;
+  --sidebar-bg: #161616;
+}
+[data-theme="dark"][data-accent="orange"] {
+  --bg: #141210;
+  --bg-secondary: #1c1916;
+  --sidebar-bg: #191613;
+}
+[data-theme="dark"][data-accent="blue"] {
+  --bg: #0f1215;
+  --bg-secondary: #161a1f;
+  --sidebar-bg: #13171c;
+}
+[data-theme="dark"][data-accent="green"] {
+  --bg: #0f1310;
+  --bg-secondary: #161c16;
+  --sidebar-bg: #131913;
+}
 
 html {
   scroll-behavior: smooth;
@@ -256,16 +300,23 @@ body {
   position: relative;
 }
 
-/* Background tree SVG decoration */
-.bg-tree {
+/* Plum tree canvas background — exact match to antfu.me */
+.plum-tree-container {
   position: fixed;
   top: 0;
+  bottom: 0;
+  left: 0;
   right: 0;
-  width: 500px;
-  height: 100vh;
-  opacity: var(--tree-opacity);
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
+  mask-image: radial-gradient(circle, transparent, black);
+  -webkit-mask-image: radial-gradient(circle, transparent, black);
+}
+
+.plum-tree-container canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 /* ===========================
@@ -693,7 +744,7 @@ body {
   .main-content { padding: 24px 20px; }
   .exp-item { grid-template-columns: 1fr; gap: 8px; }
   .projects-grid { grid-template-columns: 1fr; }
-  .bg-tree { display: none; }
+  .plum-tree-container { display: none; }
 }
 
 @media (max-width: 600px) {

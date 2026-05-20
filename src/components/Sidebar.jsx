@@ -8,9 +8,7 @@ const ACCENT_OPTIONS = [
   { label: 'Red', value: 'red' },
   { label: 'Orange', value: 'orange' },
   { label: 'Blue', value: 'blue' },
-  { label: 'Purple', value: 'purple' },
   { label: 'Green', value: 'green' },
-  { label: 'Pink', value: 'pink' },
 ];
 
 export default function Sidebar({ theme, setTheme, accent, setAccent }) {

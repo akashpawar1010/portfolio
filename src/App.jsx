@@ -5,6 +5,7 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
+import PlumTree from './components/PlumTree';
 import './index.css';
 
 const TABS = [
@@ -14,44 +15,7 @@ const TABS = [
   { id: 'contact', label: 'Contact' },
 ];
 
-// Decorative tree SVG for background
-function TreeDecoration() {
-  return (
-    <svg
-      className="bg-tree"
-      viewBox="0 0 400 900"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      {/* Main trunk */}
-      <path d="M200 900 L200 400" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-      {/* Branches */}
-      <path d="M200 400 L80 150" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-      <path d="M200 400 L320 120" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-      <path d="M200 480 L60 320" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M200 480 L340 280" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M200 560 L100 420" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M200 560 L300 380" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M200 620 L140 520" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/>
-      <path d="M200 620 L260 500" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/>
-      {/* Sub-branches */}
-      <path d="M80 150 L40 60" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M80 150 L120 80" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M320 120 L280 50" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M320 120 L360 60" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M60 320 L20 240" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/>
-      <path d="M60 320 L90 250" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/>
-      <path d="M340 280 L310 210" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/>
-      <path d="M340 280 L375 230" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/>
-      {/* Fine tips */}
-      <path d="M40 60 L20 20" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round"/>
-      <path d="M40 60 L55 20" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round"/>
-      <path d="M120 80 L105 35" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round"/>
-      <path d="M120 80 L138 38" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round"/>
-    </svg>
-  );
-}
+
 
 const pageVariants = {
   initial: { opacity: 0, y: 12 },
@@ -86,7 +50,7 @@ export default function App() {
       <Sidebar theme={theme} setTheme={setTheme} accent={accent} setAccent={setAccent} />
 
       <main className="main-content">
-        <TreeDecoration />
+        <PlumTree />
 
         {/* Navigation Tabs */}
         <nav className="nav-tabs" role="tablist" aria-label="Portfolio sections">
