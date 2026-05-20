@@ -1,55 +1,78 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
+import ImageViewer from './ImageViewer';
+import { FiSearch } from 'react-icons/fi';
 
 const { projects } = portfolioData;
 
-const tagColors = {
-  'React Native': '#61dafb',
-  'React': '#61dafb',
-  'TypeScript': '#3178c6',
-  'JavaScript': '#f7df1e',
-  'MongoDB': '#4db33d',
-  'Realm DB': '#39477f',
-  'Firebase': '#ffca28',
-  'Redux': '#764abc',
-  'Vite': '#646cff',
-  'CSS': '#e76f00',
-};
-
 export default function Projects() {
+  const [viewerImage, setViewerImage] = useState(null);
+
   return (
     <section className="section" id="projects">
       <h2 className="section-title">Projects</h2>
       <div className="projects-grid">
         {projects.map((project, i) => (
-          <motion.a
+          <motion.div
             key={i}
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
             className="project-card"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.06 }}
             whileHover={{ y: -6 }}
           >
-            <div className="project-number">PROJECT {String(i + 1).padStart(2, '0')}</div>
-            <div className="project-name">{project.name}</div>
-            <div className="project-desc">{project.desc}</div>
-            <div className="project-card-footer">
-              <div className="tag-list" style={{ margin: 0 }}>
-                {project.tags.map((t) => (
-                  <span key={t} className="tag" style={{ fontSize: '0.62rem' }}>
-                    {t}
+            {/* Clickable image preview */}
+            {project.image && (
+              <div
+                className="project-image-wrap"
+                onClick={() => setViewerImage({ src: project.image, alt: project.name })}
+              >
+                <img src={project.image} alt={project.name} className="project-image" />
+                <div className="project-image-overlay">
+                  <span style={{ display: 'flex', alignItems: 'center' }}>
+                    <FiSearch size={14} style={{ marginRight: '6px' }} /> View
                   </span>
-                ))}
+                </div>
               </div>
-              <span className="project-link-icon">↗</span>
+            )}
+
+            <div className="project-card-body">
+              <div className="project-name" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                {project.name}
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link-icon"
+                  title="Open app"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  ↗
+                </a>
+              </div>
+              <div className="project-desc">{project.desc}</div>
+              <div className="project-card-footer">
+                <div className="tag-list" style={{ margin: 0 }}>
+                  {project.tags.map((t) => (
+                    <span key={t} className="tag" style={{ fontSize: '0.62rem' }}>
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </motion.a>
+          </motion.div>
         ))}
       </div>
+
+      {/* Fullscreen image viewer */}
+      <ImageViewer
+        src={viewerImage?.src}
+        alt={viewerImage?.alt}
+        isOpen={!!viewerImage}
+        onClose={() => setViewerImage(null)}
+      />
     </section>
   );
 }
