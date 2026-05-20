@@ -49,7 +49,7 @@ export const portfolioData = {
       period: "Feb 2023 – Apr 2023",
       title: "Frontend Developer Intern",
       company: "GrowYT Consulting LLP",
-      companyUrl: "#",
+      companyUrl: "https://www.linkedin.com/company/growyt-business/?originalSubdomain=in",
       location: "Remote",
       tagline: "",
       responsibilities: [
