@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Education from './components/Education';
+import Awards from './components/Awards';
 import Skills from './components/Skills';
 import PlumTree from './components/PlumTree';
 import { portfolioData } from './data/portfolio';
@@ -30,6 +31,7 @@ export default function App() {
         <Experience />
         <Projects />
         <Education />
+        <Awards />
         <Skills />
 
         <footer className="footer">

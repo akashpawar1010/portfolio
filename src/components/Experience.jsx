@@ -1,39 +1,17 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
+import { getSkillIcon } from './TagIcon';
 
 const { experience } = portfolioData;
 
-const tagIconMap = {
-  'React Native': '⚛',
-  'React': '⚛',
-  'TypeScript': '🔷',
-  'JavaScript': '🟡',
-  'Node.js': '🟢',
-  'MongoDB': '🍃',
-  'Realm DB': '🔮',
-  'Git': '🌿',
-  'GitHub': '🐙',
-  'Jest': '🃏',
-  'HTML': '🔶',
-  'CSS': '🎨',
-  'Vite': '⚡',
-  'Tailwind': '🌊',
-  'Firebase': '🔥',
-  'Appium': '📱',
-  'Selenium': '🧪',
-  'Redux': '🔄',
-  'GraphQL': '🔗',
-  'Expo': '🚀',
-};
-
 function Tag({ skill }) {
-  const icon = tagIconMap[skill] || '🔹';
+  const icon = getSkillIcon(skill);
   return (
-    <span className="tag">
+    <motion.span className="tag">
       <span className="tag-icon">{icon}</span>
       {skill}
-    </span>
+    </motion.span>
   );
 }
 
