@@ -66,21 +66,21 @@ export const portfolioData = {
       desc: "A healthcare app connecting doctors and nurses, featuring video consultations (Zoom SDK & Daily SDK), real-time chat, scheduling, push notifications, and AI-based call summaries. Used by 5,000+ users.",
       tags: ["React Native", "Expo", "Zoom SDK", "Sockets", "VoIP"],
       url: "https://apps.apple.com/us/app/vitalcare-health/id6744088872",
-      image: "/vitalcare_preview.png",
+      image: "/Vitalcare.png",
     },
     {
       name: "CCAP Hop — Android TV OTT",
       desc: "A modern Android TV OTT application for CCAP, featuring Live TV, VOD, PPV, recordings, and a real-time emergency alert system. Serving 30,000+ users across multiple operators.",
       tags: ["Android", "ExoPlayer", "Socket.IO", "RealmDB", "Retrofit"],
       url: "https://play.google.com/store/apps/details?id=com.ccaptv&pcampaignid=web_share",
-      image: "/ccap_hop_preview.png",
+      image: "/ccap.png",
     },
     {
       name: "Northwestel TV Plus — Android TV OTT",
       desc: "Watch live TV at home or on the go with Northwestel TV Plus. A different flavor of the TV2 OTT platform with dynamic APIs, custom UI, and configuration per operator.",
       tags: ["Android", "ExoPlayer", "Media3", "OkHttp", "Kotlin"],
       url: "https://play.google.com/store/apps/details?id=com.nwtel.MobileGuide&pcampaignid=web_share",
-      image: "/nwtel_tv_preview.png",
+      image: "/northwestel.png",
     }
   ],
   skills: {
