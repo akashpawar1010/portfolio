@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolio';
-import ImageViewer from './ImageViewer';
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 import { FiSearch } from 'react-icons/fi';
 
 const { projects } = portfolioData;
@@ -66,12 +67,16 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Fullscreen image viewer */}
-      <ImageViewer
-        src={viewerImage?.src}
-        alt={viewerImage?.alt}
-        isOpen={!!viewerImage}
-        onClose={() => setViewerImage(null)}
+      <Lightbox
+        open={!!viewerImage}
+        close={() => setViewerImage(null)}
+        slides={viewerImage ? [{ src: viewerImage.src, alt: viewerImage.alt }] : []}
+        carousel={{ finite: true }}
+        render={{ buttonPrev: () => null, buttonNext: () => null }}
+        styles={{ 
+          container: { backgroundColor: "rgba(0, 0, 0, 0.85)" },
+          slide: { padding: "5vh" }
+        }}
       />
     </section>
   );
