@@ -10,8 +10,8 @@ import { portfolioData } from './data/portfolio';
 import './index.css';
 
 export default function App() {
-  const [theme, setTheme] = useState('light');
-  const [accent, setAccent] = useState('red');
+  const [theme, setTheme] = useState('dark');
+  const [accent, setAccent] = useState('blue');
 
   // Apply theme & accent to <html>
   useEffect(() => {

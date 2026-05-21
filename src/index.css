@@ -60,12 +60,12 @@
   --sidebar-bg: #f0ece8;
 }
 
-[data-accent="orange"] {
-  --accent: #e87c3e;
-  --accent-hover: #d46c2e;
-  --bg: #fdf5ee;
-  --bg-secondary: #f7ecdf;
-  --sidebar-bg: #f5e8d8;
+[data-accent="yellow"] {
+  --accent: #eab308;
+  --accent-hover: #ca8a04;
+  --bg: #fefce8;
+  --bg-secondary: #fef08a;
+  --sidebar-bg: #fef9c3;
 }
 
 [data-accent="blue"] {
@@ -91,10 +91,10 @@
   --sidebar-bg: #161616;
 }
 
-[data-theme="dark"][data-accent="orange"] {
-  --bg: #141210;
-  --bg-secondary: #1c1916;
-  --sidebar-bg: #191613;
+[data-theme="dark"][data-accent="yellow"] {
+  --bg: #141310;
+  --bg-secondary: #1c1a16;
+  --sidebar-bg: #191813;
 }
 
 [data-theme="dark"][data-accent="blue"] {
@@ -172,21 +172,24 @@ body {
   height: 120px;
   border-radius: 12px;
   overflow: hidden;
-  border: 2px solid var(--border);
   flex-shrink: 0;
   box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sidebar-avatar-wrap img {
-  width: 100%;
-  height: 100%;
+  width: 116%;
+  height: 116%;
+  flex-shrink: 0;
   object-fit: cover;
   object-position: center top;
   transition: transform 0.4s ease;
 }
 
 .sidebar-avatar-wrap:hover img {
-  transform: scale(1.04);
+  transform: scale(1.12);
 }
 
 .sidebar-name {
